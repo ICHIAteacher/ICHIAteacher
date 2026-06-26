@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>臺灣轉型大冒險</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="game-header">
+    <div>
+      <p class="eyebrow">六上社會｜第1單元</p>
+      <h1>臺灣轉型大冒險</h1>
+      <p class="subtitle">從戰後小農村，一路升級成世界科技島！</p>
+    </div>
+
+    <div class="progress-box">
+      <span id="progressText">完成 0 / 8 關</span>
+      <button id="resetBtn" class="small-btn">重新開始</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 地圖首頁 -->
+    <section id="mapScreen" class="screen active">
+      <div class="panel intro-panel">
+        <h2>任務說明</h2>
+        <p>
+          你是臺灣轉型調查員。每一關都要先閱讀短文，找出關鍵字，
+          再完成簡單任務。通關後可以升級你的城市。
+        </p>
+      </div>
+
+      <div id="levelMap" class="level-map"></div>
+    </section>
+
+    <!-- 關卡畫面 -->
+    <section id="levelScreen" class="screen">
+      <button id="backToMapBtn" class="small-btn">← 回地圖</button>
+
+      <article class="level-panel">
+        <div class="level-top">
+          <div>
+            <p id="levelNumber" class="eyebrow"></p>
+            <h2 id="levelTitle"></h2>
+            <p id="levelIntro" class="level-intro"></p>
+          </div>
+
+          <div class="reward-card">
+            <span>通關獎勵</span>
+            <strong id="rewardText"></strong>
+          </div>
+        </div>
+
+        <img id="levelImage" class="level-image" src="" alt="關卡圖片" />
+
+        <div class="reading-box">
+          <div class="reading-title-row">
+            <h3>閱讀任務</h3>
+            <button id="speakBtn" class="speak-btn">🔊 聽老師讀</button>
+          </div>
+
+          <p id="storyText" class="story-text"></p>
+
+          <div class="word-bank">
+            <h4>本關關鍵字</h4>
+            <div id="wordList" class="word-list"></div>
+          </div>
+        </div>
+
+        <div class="question-box">
+          <p id="questionProgress" class="question-progress"></p>
+          <h3 id="questionText"></h3>
+          <div id="choicesBox" class="choices-box"></div>
+          <p id="feedbackText" class="feedback"></p>
+          <button id="nextQuestionBtn" class="primary-btn hidden">下一題</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- 通關畫面 -->
+    <section id="completeScreen" class="screen">
+      <div class="complete-card">
+        <h2>🎉 通關成功！</h2>
+        <p id="completeMessage"></p>
+        <p id="completeReward" class="complete-reward"></p>
+
+        <div class="complete-actions">
+          <button id="nextLevelBtn" class="primary-btn">前往下一關</button>
+          <button id="mapBtnFromComplete" class="secondary-btn">回到地圖</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>社會閱讀遊戲｜練習識字、閱讀理解、找證據與因果關係</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

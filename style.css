@@ -1,0 +1,417 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+  background: #f7efe1;
+  color: #2d2a26;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  padding: 28px 36px;
+  background: linear-gradient(135deg, #6fae75, #3f7f8f);
+  color: white;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  font-size: 1.05rem;
+}
+
+.progress-box {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 14px 16px;
+  border-radius: 16px;
+  min-width: 180px;
+  text-align: center;
+}
+
+.progress-box span {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+main {
+  width: min(1180px, 94vw);
+  margin: 26px auto;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+.panel,
+.level-panel,
+.complete-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 3px solid #e0c78d;
+  border-radius: 24px;
+  box-shadow: 0 10px 24px rgba(80, 54, 20, 0.12);
+}
+
+.intro-panel {
+  padding: 22px 26px;
+  margin-bottom: 22px;
+}
+
+.intro-panel h2 {
+  margin-top: 0;
+}
+
+.level-map {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.level-card {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 22px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 20px rgba(74, 56, 31, 0.16);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.level-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(74, 56, 31, 0.22);
+}
+
+.level-card.completed {
+  outline: 4px solid #76b66b;
+}
+
+.level-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  background: #ead9b5;
+}
+
+.level-card-body {
+  padding: 14px 15px 16px;
+}
+
+.level-card-body small {
+  color: #7a6a48;
+  font-weight: 700;
+}
+
+.level-card-body h3 {
+  margin: 6px 0 8px;
+  font-size: 1.15rem;
+}
+
+.level-card-body p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #f4df9b;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.badge.done {
+  background: #d7efd2;
+  color: #2c6b34;
+}
+
+.level-panel {
+  padding: 22px;
+}
+
+.level-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.level-top h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.level-intro {
+  margin: 10px 0 0;
+  line-height: 1.7;
+}
+
+.reward-card {
+  background: #fff5cc;
+  border: 2px solid #e3bd57;
+  border-radius: 18px;
+  padding: 12px 16px;
+  min-width: 160px;
+  text-align: center;
+}
+
+.reward-card span {
+  display: block;
+  font-size: 0.9rem;
+  color: #7d6621;
+}
+
+.reward-card strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.05rem;
+}
+
+.level-image {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+  margin: 20px 0;
+  background: #e9d7b5;
+}
+
+.reading-box,
+.question-box {
+  background: #fffaf0;
+  border: 2px solid #ecd9aa;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 18px;
+}
+
+.reading-title-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.reading-title-row h3 {
+  margin: 0;
+}
+
+.story-text {
+  font-size: 1.25rem;
+  line-height: 2.1;
+  letter-spacing: 0.04em;
+  background: white;
+  padding: 18px;
+  border-radius: 16px;
+  border: 2px dashed #e4c88f;
+}
+
+.highlight-word {
+  background: #fff0a6;
+  border-radius: 8px;
+  padding: 1px 4px;
+  font-weight: 800;
+}
+
+.word-bank h4 {
+  margin-bottom: 10px;
+}
+
+.word-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.word-chip {
+  background: #d8f0d4;
+  border: 2px solid #8fc184;
+  color: #245c2a;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+
+.question-progress {
+  color: #7a6a48;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.question-box h3 {
+  font-size: 1.35rem;
+  line-height: 1.55;
+}
+
+.choices-box {
+  display: grid;
+  gap: 10px;
+}
+
+.choice-btn {
+  width: 100%;
+  border: 2px solid #d9c28b;
+  background: white;
+  border-radius: 16px;
+  padding: 14px 16px;
+  font-size: 1.05rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.choice-btn:hover {
+  background: #fff2c0;
+  transform: translateX(3px);
+}
+
+.choice-btn.correct {
+  background: #d7efd2;
+  border-color: #68ad5d;
+}
+
+.choice-btn.wrong {
+  background: #ffd9d2;
+  border-color: #df7669;
+}
+
+.feedback {
+  min-height: 28px;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.primary-btn,
+.secondary-btn,
+.small-btn,
+.speak-btn {
+  border: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.primary-btn {
+  background: #3f7f8f;
+  color: white;
+  padding: 13px 22px;
+  font-size: 1rem;
+}
+
+.secondary-btn {
+  background: #fff2c0;
+  color: #4d3b13;
+  padding: 13px 22px;
+  font-size: 1rem;
+}
+
+.small-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: #2e5f6d;
+  padding: 9px 14px;
+}
+
+.speak-btn {
+  background: #3f7f8f;
+  color: white;
+  padding: 10px 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.complete-card {
+  text-align: center;
+  padding: 40px 28px;
+  max-width: 640px;
+  margin: 60px auto;
+}
+
+.complete-card h2 {
+  font-size: 2.1rem;
+  margin-top: 0;
+}
+
+.complete-reward {
+  display: inline-block;
+  background: #fff0a6;
+  padding: 12px 18px;
+  border-radius: 16px;
+  font-weight: 900;
+  border: 2px solid #e3bd57;
+}
+
+.complete-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  color: #7c6c4a;
+}
+
+@media (max-width: 900px) {
+  .game-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .level-map {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .level-top {
+    flex-direction: column;
+  }
+
+  .reward-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  h1 {
+    font-size: 1.85rem;
+  }
+
+  .level-map {
+    grid-template-columns: 1fr;
+  }
+
+  .story-text {
+    font-size: 1.1rem;
+  }
+}
